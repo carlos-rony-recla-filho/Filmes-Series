@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="/styles/style.css">
+    <title>Filmes & Série</title>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <i class="fa-solid fa-film" id="nav_logo">CineVoto</i>
+            <ul id="nav-list">
+                <li class="nav_item"><a href="#home">Home</a></li>
+                <li class="nav_item"><a href="#filmes">Filmes</a></li>
+                <li class="nav_item"><a href="#series">Séries</a></li>
+                <li class="nav_item"><a href="#cadastro">Cadastro</a></li>
+            </ul>
+            <button id="mobile_btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav_item active"><a href="#home">Home</a></li>
+                <li class="nav_item"><a href="#filmes">Filmes</a></li>
+                <li class="nav_item"><a href="#series">Séries</a></li>
+                <li class="nav_item"><a href="#cadastro">Cadastro</a></li>
+            </ul>
+        </div>
+
+    </header>
+    <main id="content">
+        <section id="home">
+            <div id="cta">
+                <h1 class="title_cta">
+                    No CineVoto, a sua opinião conta. <br> <small> Escolha, vote e descubra o que o público
+                        pensa!</small>
+                </h1>
+            </div>
+        </section>
+
+
+        <section id="filmes">
+            <h3 class="section_title">Filmes</h3>
+
+            <div class="carousel-container">
+                <button class="prev"><i class="fa-solid fa-angle-left"></i></button>
+                <div id="movies">
+
+                    <div class="movie">
+                        <div class="movie_title">Vingadores Ultimado</div>
+                        <img src="/images/filme01.jpg" alt="imagem Vingadores Ultimado" class="movie_img">
+                        <div class="movie_genero">Ação/Aventura</div>
+                        <p class="movie_description">Após os eventos devastadores de Vingadores: Guerra Infinita, onde
+                            Thanos dizima metade da população do universo, os Vingadores restantes precisam se unir para
+                            reverter a situação.</p>
+                        <div class="voting">
+                            <button class="btn-default"><i class="fa-solid fa-thumbs-up"></i> Gostei</button>
+                            <button class="btn-default"><i class="fa-solid fa-thumbs-down"></i> Não Gostei</button>
+                        </div>
+                        <div class="result">
+                            <span class="result_yas"> (223)Gostei</span>
+                            <span class="result_no"> (20)Não Gostei</span>
+                        </div>
+                    </div>
+
+                    <div class="movie">
+                        <div class="movie_title">Vingadores Ultimado</div>
+                        <img src="/images/filme01.jpg" alt="imagem Vingadores Ultimado" class="movie_img">
+                        <div class="movie_genero">Ação/Aventura</div>
+                        <p class="movie_description">Após os eventos devastadores de Vingadores: Guerra Infinita, onde
+                            Thanos dizima metade da população do universo, os Vingadores restantes precisam se unir para
+                            reverter a situação.</p>
+                        <div class="voting">
+                            <button class="btn-default"><i class="fa-solid fa-thumbs-up"></i> Gostei</button>
+                            <button class="btn-default"><i class="fa-solid fa-thumbs-down"></i> Não Gostei</button>
+                        </div>
+                        <div class="result">
+                            <span class="result_yas"> (223)Gostei</span>
+                            <span class="result_no"> (20)Não Gostei</span>
+                        </div>
+                    </div>
+
+                    <div class="movie">
+                        <div class="movie_title">Vingadores Ultimado</div>
+                        <img src="/images/filme01.jpg" alt="imagem Vingadores Ultimado" class="movie_img">
+                        <div class="movie_genero">Ação/Aventura</div>
+                        <p class="movie_description">Após os eventos devastadores de Vingadores: Guerra Infinita, onde
+                            Thanos dizima metade da população do universo, os Vingadores restantes precisam se unir para
+                            reverter a situação.</p>
+                        <div class="voting">
+                            <button class="btn-default"><i class="fa-solid fa-thumbs-up"></i> Gostei</button>
+                            <button class="btn-default"><i class="fa-solid fa-thumbs-down"></i> Não Gostei</button>
+                        </div>
+                        <div class="result">
+                            <span class="result_yas"> (223)Gostei</span>
+                            <span class="result_no"> (20)Não Gostei</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="next"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+        </section>
+
+        <section id="series">
+            <h3 class="section_title">Séries</h3>
+            <div class="carousel-container">
+                <button class="prev"><i class="fa-solid fa-angle-left"></i></button>
+                <div id="seriess">
+                    <div class="serie">
+                        <div class="serie_title">Game of Thrones</div>
+                        <img src="/images/serie01.jpg" alt="imagem Vingadores Ultimado" class="movie_img">
+                        <div class="serie_genero">Drama/Fantasia</div>
+                        <p class="serie_description">a série apresenta um enredo de alianças e conflitos entre famílias
+                            nobres dinásticas dos Sete Reinos, que competem para reivindicar o imperioso Trono de Ferro
+                            ou
+                            lutam para não serem governados por quem o possui.</p>
+                        <div class="voting">
+                            <button class="btn-default"><i class="fa-solid fa-thumbs-up"></i> Gostei</button>
+                            <button class="btn-default"><i class="fa-solid fa-thumbs-down"></i> Não Gostei</button>
+                        </div>
+                        <div class="result">
+                            <span class="result_yas"> (223)Gostei</span>
+                            <span class="result_no"> (20)Não Gostei</span>
+                        </div>
+                    </div>
+
+                    <div class="serie">
+                        <div class="serie_title">Game of Thrones</div>
+                        <img src="/images/serie01.jpg" alt="imagem Vingadores Ultimado" class="movie_img">
+                        <div class="serie_genero">Drama/Fantasia</div>
+                        <p class="serie_description">a série apresenta um enredo de alianças e conflitos entre famílias
+                            nobres dinásticas dos Sete Reinos, que competem para reivindicar o imperioso Trono de Ferro
+                            ou
+                            lutam para não serem governados por quem o possui.</p>
+                        <div class="voting">
+                            <button class="btn-default"><i class="fa-solid fa-thumbs-up"></i> Gostei</button>
+                            <button class="btn-default"><i class="fa-solid fa-thumbs-down"></i> Não Gostei</button>
+                        </div>
+                        <div class="result">
+                            <span class="result_yas"> (223)Gostei</span>
+                            <span class="result_no"> (20)Não Gostei</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="next"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+        </section>
+
+        <section id="cadastro">
+            <h3 class="section_title">Cadastro de Filmes/Séries</h3>
+            <div class="form-content">
+                <form id="form-cadastro">
+                    <input type="text" name="titulo" id="titulo" class="form-title"
+                        placeholder="Coloque o Título do Filme/Série" required>
+                    <select name="tipo" id="tipo" class="form-select" required>
+                        <option value="" disabled selected hidden>Selecione o Tipo</option>
+                        <option value="filme">Filme</option>
+                        <option value="serie">Série</option>
+                    </select>
+                    <select name="genero" id="genero" class="form-select" required>
+                        <option value="" disabled selected hidden>Selecione um Gênero</option>
+                        <option value="Ação/Aventura">Ação/Aventura</option>
+                        <option value="Animação">Animação</option>
+                        <option value="Comédia/Aventura">Comédia/Aventura</option>
+                        <option value="Ficção Cientifica/Aventura">Ficção Científica/Aventura</option>
+                        <option value="Drama/Fantasia">Drama/Fantasia</option>
+                        <option value="Drama/Romance">Drama/Romance</option>
+                    </select>
+                    <input type="file" accept="image/*" id="imagem" name="imagem" class="form-img">
+                    <input type="text" name="descricao" id="descricao" class="form-description"
+                        placeholder="Coloque a Descrição" required>
+                    <!-- Pra imagem é um pouco mais complexo enviar arquivo, vamos deixar pra depois -->
+                    <button type="submit" class="form-btn">Cadastrar</button>
+                </form>
+
+            </div>
+        </section>
+    </main>
+    <script type="module" src="/index.js"></script>
+</body>
+
+</html>
