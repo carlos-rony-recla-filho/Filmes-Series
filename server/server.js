@@ -11,14 +11,14 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-// CORS habilitado para todas origens (ajuste se quiser restringir)
+
 app.use(cors());
 
-// Para interpretar JSON e urlencoded
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Configuração MySQL
+
 const db = await mysql.createPool({
   host: 'localhost',
   user: 'root',
@@ -26,13 +26,13 @@ const db = await mysql.createPool({
   database: 'filmesdb',
 });
 
-// Diretório de imagens
+
 const imagesDir = path.resolve(__dirname, '..', 'public', 'images');
 if (!fs.existsSync(imagesDir)) {
   fs.mkdirSync(imagesDir, { recursive: true });
 }
 
-// Configuração multer
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, imagesDir);
@@ -45,10 +45,10 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// Servir arquivos estáticos
+
 app.use(express.static(path.resolve(__dirname, '..', 'public')));
 
-// Rota POST para cadastro com upload
+
 app.post('/api/filmes-series', upload.single('imagem'), async (req, res) => {
   try {
     const { titulo, genero, descricao, tipo } = req.body;
@@ -86,7 +86,7 @@ app.post('/api/filmes-series', upload.single('imagem'), async (req, res) => {
   }
 });
 
-// Rota GET para listar filmes e séries do banco
+
 app.get('/api/filmes-series', async (req, res) => {
   try {
     const [rows] = await db.query('SELECT * FROM filmes_series ORDER BY id DESC');
@@ -97,7 +97,7 @@ app.get('/api/filmes-series', async (req, res) => {
   }
 });
 
-// Rota POST para voto positivo
+
 app.post('/api/filmes-series/:id/voto/positivo', async (req, res) => {
   try {
     const id = parseInt(req.params.id);
@@ -113,7 +113,7 @@ app.post('/api/filmes-series/:id/voto/positivo', async (req, res) => {
   }
 });
 
-// Rota POST para voto negativo
+
 app.post('/api/filmes-series/:id/voto/negativo', async (req, res) => {
   try {
     const id = parseInt(req.params.id);
@@ -129,12 +129,11 @@ app.post('/api/filmes-series/:id/voto/negativo', async (req, res) => {
   }
 });
 
-// Servir index.html na raiz
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
 
-// Iniciar servidor
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);

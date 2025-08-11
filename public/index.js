@@ -1,16 +1,15 @@
-// Controle do carrossel
+
 document.querySelectorAll('.carousel-container').forEach(carousel => {
   const btnPrev = carousel.querySelector('.prev');
   const btnNext = carousel.querySelector('.next');
 
-  // Ajuste: selecionar qualquer um desses IDs dentro do carousel
   const container = carousel.querySelector('#movies, #series, #seriess');
   if (!container) return; // evita erro se não achar container
 
-  // Usando o primeiro item para calcular o tamanho do scroll
+
   const card = container.querySelector('.movie, .serie');
   if (!card) return;
-  const cardWidth = card.offsetWidth + 24; // gap
+  const cardWidth = card.offsetWidth + 24; 
 
   btnNext.addEventListener('click', () => {
     container.scrollBy({ left: cardWidth, behavior: 'smooth' });
@@ -21,7 +20,7 @@ document.querySelectorAll('.carousel-container').forEach(carousel => {
   });
 });
 
-// Menu mobile
+
 document.addEventListener('DOMContentLoaded', () => {
   const mobileBtn = document.getElementById('mobile_btn');
   const mobileMenu = document.getElementById('mobile_menu');
@@ -37,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// ScrollReveal (se estiver usando a lib ScrollReveal)
+
 ScrollReveal().reveal('#cta', {
   origin: 'left',
   duration: 2000,
@@ -50,7 +49,7 @@ ScrollReveal().reveal('#movies, #seriess', {
   distance: '10%',
 });
 
-// Cadastro - envio do formulário
+
 const form = document.getElementById('form-cadastro');
 
 form.addEventListener('submit', async (e) => {
@@ -80,7 +79,7 @@ form.addEventListener('submit', async (e) => {
   try {
     const response = await fetch('/api/filmes-series', {
       method: 'POST',
-      body: formData, // navegador define multipart/form-data
+      body: formData, 
     });
 
     const data = await response.json();
@@ -88,7 +87,7 @@ form.addEventListener('submit', async (e) => {
     if (response.ok) {
       alert('Cadastro realizado com sucesso!');
       form.reset();
-      carregarFilmesESeries(); // Atualiza lista
+      carregarFilmesESeries(); 
     } else {
       alert('Erro: ' + data.error);
     }
@@ -98,7 +97,6 @@ form.addEventListener('submit', async (e) => {
   }
 });
 
-// Função para carregar filmes e séries do backend
 async function carregarFilmesESeries() {
   try {
     const response = await fetch('http://localhost:3000/api/filmes-series');
@@ -107,9 +105,6 @@ async function carregarFilmesESeries() {
 
     const containerFilmes = document.getElementById('movies');
     const containerSeries = document.getElementById('seriess');
-
-    // containerFilmes.innerHTML = '';
-    // containerSeries.innerHTML = '';
 
     lista.forEach(item => {
       const div = document.createElement('div');
@@ -180,5 +175,4 @@ async function carregarFilmesESeries() {
   }
 }
 
-// Carregar filmes e séries ao carregar a página
 window.addEventListener('load', carregarFilmesESeries);
