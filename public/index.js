@@ -2,9 +2,9 @@
 document.querySelectorAll('.carousel-container').forEach(carousel => {
   const btnPrev = carousel.querySelector('.prev');
   const btnNext = carousel.querySelector('.next');
-  
+
   // Ajuste: selecionar qualquer um desses IDs dentro do carousel
-  const container = carousel.querySelector('#movies, #series, #seriess'); 
+  const container = carousel.querySelector('#movies, #series, #seriess');
   if (!container) return; // evita erro se não achar container
 
   // Usando o primeiro item para calcular o tamanho do scroll
@@ -129,6 +129,7 @@ async function carregarFilmesESeries() {
         <div class="result">
           <span class="result_yas"> (${item.votos_positivos}) Gostei</span>
           <span class="result_no"> (${item.votos_negativos}) Não Gostei</span>
+          <span class="result_no">(${item.votos_negativos + item.votos_positivos}) total de votos</span>
         </div>
       `;
 
